@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add_qr_contact"
+        android:title="扫码添加联系人"
+        android:icon="@drawable/scan"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/search_button"
+        android:title="搜索联系人"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/no_disturb"
+        android:title="免打扰模式"
+        android:checkable="true"
+        android:checked="false"
+        android:orderInCategory="0"/>
+    <item
+        android:id="@+id/remind"
+        android:title="节日/生日提示"
+        android:checkable="true"
+        android:checked="true"
+        android:orderInCategory="1"/>
+</menu>

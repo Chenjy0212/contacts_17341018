@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.contacts_cjy_17341018">
+
+    <!--  请求 网络 许可   -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--  请求 通话 许可   -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--  请求 读取手机状态 许可   -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--  请求 手机震动 许可   -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--  请求 访问通知 许可   -->
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <!--  请求 读取通话记录 许可   -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <!--  请求 读取联系人 许可   -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--  请求 相机 许可：用于扫码   -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--  请求 写入外部存储器 许可   -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--  请求 硬件摄像头 许可   -->
+    <uses-feature android:name="android.hardware.camera" />
+    <!--  请求 硬件摄像头自动对焦 许可   -->
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!--  请求 手电筒 许可   -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/picture"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:windowSoftInputMode="adjustPan"
+            android:name="com.example.contacts_cjy_17341018.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                       android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name="com.example.contacts_cjy_17341018.AddContactActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="AddContact" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.contacts_cjy_17341018.ContactInfoActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="ContactInfo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.contacts_cjy_17341018.StoreContactActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="StoreContact" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.contacts_cjy_17341018.EditContactInfoActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="EditContactInfo" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="com.example.contacts_cjy_17341018.RecordDB"
+            android:authorities="com.example.providers.RecordDB"
+            android:exported="true" />
+        <provider
+            android:name="com.example.contacts_cjy_17341018.ContactDB"
+            android:authorities="com.example.providers.ContactDB"
+            android:exported="true" />
+    </application>
+
+</manifest>
